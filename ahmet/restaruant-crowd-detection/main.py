@@ -11,7 +11,7 @@ from ultralytics import YOLO
 # SETTINGS
 # =========================================================
 
-RTSP_URL = "<insert_rtsp_url>"
+RTSP_URL = "<insert_rtsp_url>" #insert rtsp url
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
