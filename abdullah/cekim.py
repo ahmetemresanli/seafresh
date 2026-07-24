@@ -3,6 +3,28 @@ import time
 import os
 import numpy as np
 from ultralytics import YOLO
+from dotenv import load_dotenv  # <-- Eklendi
+
+# .env dosyasındaki değişkenleri yükle
+load_dotenv()
+
+# Hassas bilgileri .env dosyasından çek
+RTSP_USER = os.getenv("RTSP_USER")
+RTSP_PASS = os.getenv("RTSP_PASS")
+RTSP_IP = os.getenv("RTSP_IP")
+RTSP_PORT = os.getenv("RTSP_PORT", "554")
+
+# RTSP URL'sini dinamik oluştur (Artık kodda şifre yok!)
+RTSP_URL = f"rtsp://{RTSP_USER}:{RTSP_PASS}@{RTSP_IP}:{RTSP_PORT}/cam/playback?channel=6&subtype=0&starttime=2026_07_20_11_55_00&endtime=2026_07_22_23_00_00"
+
+print(f"RTSP Kamerasına bağlanılıyor... Lütfen bekleyin.")
+cap = cv2.VideoCapture(RTSP_URL)
+# ... KODUN GERİ KALANI AYNEN DEVAM EDİYOR ...
+import cv2
+import time
+import os
+import numpy as np
+from ultralytics import YOLO
 
 # YOLO modelini yükle
 model = YOLO('yolov8n.pt')

@@ -1,0 +1,4 @@
+.env
+yakalanan_insanlar/
+__pycache__/
+*.pt
